@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CI/CD using GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        ul {
+            line-height: 1.8;
+        }
+        code {
+            background: #eee;
+            padding: 3px 6px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simple CI/CD using GitHub</h1>
+
+    <h2>What is CI/CD?</h2>
+    <p>
+        CI/CD stands for Continuous Integration and Continuous Deployment.
+        It helps automate testing and deployment of code whenever changes are pushed to GitHub.
+    </p>
+
+    <h2>Steps to Setup CI/CD using GitHub Actions</h2>
+    <ul>
+        <li>1. Create a GitHub repository and upload your project.</li>
+        <li>2. Inside your project, create a folder named <code>.github/workflows</code>.</li>
+        <li>3. Inside this folder, create a YAML file (e.g., <code>ci.yml</code>).</li>
+        <li>4. Add workflow configuration to automate build and test.</li>
+        <li>5. Push the code to GitHub.</li>
+        <li>6. GitHub Actions will automatically run the workflow.</li>
+    </ul>
+
+    <h2>Example Workflow (ci.yml)</h2>
+    <pre>
+name: CI Pipeline
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: echo "Installing dependencies..."
+
+    - name: Run Tests
+      run: echo "Running tests..."
+
+    - name: Build Project
+      run: echo "Building project..."
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>
+        This simple CI/CD pipeline automatically runs whenever code is pushed.
+        It helps developers save time and ensure code quality.
+    </p>
+</div>
+
+</body>
+</html>
